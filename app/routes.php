@@ -11,11 +11,15 @@
 |
 */
 
+Route::resource('tact', 'TactController');
+Route::resource('cows', 'CowController');
+
 Route::get('/', function()
 {
 
 	$view_data = array(
-		'title' => 'Vacas.dev'
+		'title' => 'Vacas.dev',
+		'cows' => Cow::all()
 	);
 
 	return View::make('home', $view_data);
